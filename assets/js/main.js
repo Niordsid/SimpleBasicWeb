@@ -23,7 +23,7 @@ function showcomplete(){
 
 
       var complete= "<tr> <td> </td> <td>"+todos[i].name+" </td> <td>"+todos[i].done+" </td> </tr>";
-      console.log(complete);
+
       $('#completed-todo').append(complete)
 
 }
@@ -37,7 +37,7 @@ function showinclomplete(){
 
 
       var incomplete= "<tr> <td> </td> <td>"+todos[i].name+" </td> <td>"+todos[i].done+" </td> </tr>";
-      console.log(incomplete);
+
       $('#incompleted-todo').append(incomplete)
     }
 
@@ -66,19 +66,20 @@ $(document).on('click',".button-todo", function() {
   var index= $(this).attr('index');
 
   todos[index].done = !todos[index].done;
-  console.log(todos[index].done);
+
 
 
 /* Revisar el estado de la tarea */
   if(todos[index].done ==true){
 
     console.log(todos[index].name, todos[index].time ,todos[index].done);
+    showcomplete();
 
     /*showclomplete();*/
   }else if (todos[index].done == false) {
 
     console.log(todos[index].name, todos[index].time ,todos[index].done);
-    /*showincomplete();*/
+    showinclomplete();
   }
 
 
