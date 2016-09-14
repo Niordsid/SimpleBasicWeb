@@ -33,43 +33,90 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
+
       <div class="container-fluid">
 
         <div class="row">
-          <h1>Things To Do</h1>
+          <div class="page-header">
+            <h1 class="text-center">Things <span class="label label-warning">To Do</span></h1>
+          </div>
+        </div>
+
+        <div class="row" id="Form">
+          <div class="col-md-4">
+            <label for="exampleInputName1">Task</label>
+            <input type="text" class="form-control" id="input-todo" placeholder="Task to do">
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputName2">Time Remaining</label>
+            <input type="text" class="form-control" id="time-task" placeholder="Time Remaining">
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-primary btn-lg" id="todo-button">Register</button>
+          </div>
+        </div>
+
+        <!-- List Task-->
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th> <span class="glyphicon glyphicon-calendar"></span> </th> <th>Task</th> <th>Remaining Time</th>
+                </tr>
+              </thead>
+              <tbody id="table2" class="">
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div class="row">
-            <form class="form-inline">
-              <div class="form-group">
-                <label for="exampleInputName1">Task</label>
-                <input type="text" class="form-control" id="input-todo" placeholder="Task to do">
-
-                <label for="exampleInputName2">Time Remaining</label>
-                <input type="text" class="form-control" id="time-task" placeholder="Time Remaining">
-              </div>
-              <button type="button" class="btn btn-primary" id="todo-button">Register</button>
-            </form>
-
-          
-        </div>
-
-<!-- List Task-->
-
-        <div class="">
+          <!-- List of Completed Task-->
+          <div class="col-md-8 col-md-offset-3">
+            <div class="page-header">
+              <h1 class="text-center"><span class="label label-success">Completed</span> Task</h1>
+            </div>
 
             <table class="table">
               <thead>
-              <tr>
-                <th> <span class="glyphicon glyphicon-calendar"></span> </th> <th>Task</th> <th>Remaining Time</th>
-              </tr>
+                <tr>
+                  <th> <span class="glyphicon glyphicon-calendar"></span> </th> <th>Task</th> <th>Status</th>
+                </tr>
               </thead>
-              <tbody id="table2" class="">
-
+              <tbody id="completed-todo">
 
               </tbody>
+
+            </table>
+          </div>
+
+        </div>
+<br>
+<br>
+<br>
+        <div class="row">
+
+
+          <!-- List Task pending-->
+          <div class="col-md-8 col-md-offset-3">
+
+            <div class="page-header">
+              <h1 class="text-center">Task <span class="label label-danger">pending</span> </h1>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th> <span class="glyphicon glyphicon-calendar"></span> </th> <th>Task</th> <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="incompleted-todo">
+
+              </tbody>
+
             </table>
 
+          </div>
         </div>
 
       </div>
