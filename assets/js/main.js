@@ -16,31 +16,35 @@ function showTodos(){
 }
 
 /* funcion que muestra las tareas completas Nota: Falta terminarla*/
-function showcomplete(){
+function showComplete(){
   $('#completed-todo').html('');
 
-    for(var i=0; i<todos.length; i++){
 
+
+  for(var i=0; i<todos.length; i++){
+
+    if(todos[i].done){
 
       var complete= "<tr> <td> </td> <td>"+todos[i].name+" </td> <td>"+todos[i].done+" </td> </tr>";
-
-      $('#completed-todo').append(complete)
-
-}
+      console.log('Estado=',todos[i].done)
+      $('#completed-todo').append(complete);
+    }
+  }
 
 }
 /* funcion que muestra las tareas incompletas Nota: Falta terminarla*/
-function showinclomplete(){
+function showInclomplete(){
   $('#incompleted-todo').html('');
 
   for(var i=0; i<todos.length; i++){
 
-
+    if(!todos[i].done){
       var incomplete= "<tr> <td> </td> <td>"+todos[i].name+" </td> <td>"+todos[i].done+" </td> </tr>";
 
-      $('#incompleted-todo').append(incomplete)
+      $('#incompleted-todo').append(incomplete);
+      
     }
-
+  }
 
 }
 
@@ -68,19 +72,13 @@ $(document).on('click',".button-todo", function() {
   todos[index].done = !todos[index].done;
 
 
+  showComplete();
+  showInclomplete();
 
-/* Revisar el estado de la tarea */
-  if(todos[index].done ==true){
+ /*if(todos[index].done= false){
+    console.log(todos[index].done, todos[index].name);
 
-    console.log(todos[index].name, todos[index].time ,todos[index].done);
-    showcomplete();
-
-    /*showclomplete();*/
-  }else if (todos[index].done == false) {
-
-    console.log(todos[index].name, todos[index].time ,todos[index].done);
-    showinclomplete();
-  }
+  }*/
 
 
 } );
